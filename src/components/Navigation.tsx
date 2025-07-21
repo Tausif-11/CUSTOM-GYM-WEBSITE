@@ -1,17 +1,24 @@
+
 import { useState } from "react";
-import { Menu, X, Dumbbell } from "lucide-react";
+import { Menu, X, Dumbbell, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [programsOpen, setProgramsOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "Programs", href: "#programs" },
-    { label: "Trainers", href: "#trainers" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
     { label: "Membership", href: "#membership" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+  ];
+
+  const programItems = [
+    { label: "CrossFit", href: "/programs/crossfit" },
+    { label: "Zumba", href: "/programs/zumba" },
+    { label: "MMA", href: "/programs/mma" },
   ];
 
   return (
@@ -19,24 +26,50 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <Dumbbell className="h-8 w-8 text-primary" />
             <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               FlexFusion
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
+            
+            {/* Programs Dropdown */}
+            <div className="relative">
+              <button
+                className="flex items-center text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                onClick={() => setProgramsOpen(!programsOpen)}
+              >
+                Programs
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              
+              {programsOpen && (
+                <div className="absolute top-full left-0 mt-2 w-48 bg-background/95 backdrop-blur-md border border-border rounded-md shadow-lg">
+                  {programItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      to={item.href}
+                      className="block px-4 py-2 text-foreground hover:text-primary hover:bg-muted transition-colors duration-200"
+                      onClick={() => setProgramsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Auth Buttons - Desktop */}
@@ -62,15 +95,31 @@ const Navigation = () => {
         <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border">
           <div className="px-4 py-6 space-y-4">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="block text-foreground hover:text-primary transition-colors duration-200 font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
+            
+            {/* Mobile Programs Menu */}
+            <div className="space-y-2">
+              <div className="text-foreground font-medium">Programs</div>
+              {programItems.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="block pl-4 text-muted-foreground hover:text-primary transition-colors duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            
             <div className="pt-4 space-y-2">
               <Button variant="ghost" className="w-full">
                 Sign In

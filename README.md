@@ -1,73 +1,114 @@
-# Welcome to your Lovable project
+# 🏋️‍♂️ Flex Fusion — Full-Stack Gym & Fitness Website
 
-## Project info
+**Flex Fusion** is a modern, full-featured, responsive gym website built for fitness brands offering specialized programs like CrossFit, Zumba, MMA, and more. It supports dynamic program pages, user authentication, mock payments, class booking, and a complete admin system — all with a sleek, dark-themed UI.
 
-**URL**: https://lovable.dev/projects/888b6e05-9c2a-4416-a70f-de75755ea70e
+---
 
-## How can I edit this code?
+## 🌐 Live Preview
 
-There are several ways of editing your application.
+🔗 [Visit Flex Fusion Live](https://your-live-site-url.vercel.app)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/888b6e05-9c2a-4416-a70f-de75755ea70e) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+| Frontend       | Backend         | Auth/DB         | Payments      | Deployment   |
+|----------------|------------------|------------------|----------------|---------------|
+| React + Vite   | Supabase         | Supabase Auth & DB | Stripe (Test) | Vercel        |
+| Tailwind CSS   | Supabase API     | JWT Sessions     | Razorpay (optional) | GitHub Actions |
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🎨 Features Overview
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### ✅ Frontend
+- Fully responsive dark UI with neon accents
+- Sticky navbar with mobile hamburger menu
+- Hero section with animated CTAs
+- CrossFit, Zumba, MMA detail pages
+- About Us with mission & timeline
+- Contact form with map & socials
+- Testimonials carousel
+- Membership pricing section
+- Custom 404 page
 
-Follow these steps:
+### 🔐 Authentication (Supabase)
+- Email/password signup & login
+- Protected dashboard routes
+- Role-based access (User/Admin)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 💳 Payments (Stripe Test Mode)
+- Monthly ₹999 | Quarterly ₹2,499 | Yearly ₹8,499
+- Purchase membership plans
+- Payment confirmation pages
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 📅 User Dashboard
+- Profile management
+- Class booking view
+- Payment history
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 🧑‍💼 Admin Dashboard
+- Manage users, trainers, plans
+- View bookings and metrics
+- Update program content
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+---
+
+## 📁 Folder Structure
+
+/src
+├── components/ # Navbar, Footer, Testimonials, etc.
+├── pages/ # Home, About, Contact, Programs
+├── programs/ # CrossFit, Zumba, MMA
+├── supabase/ # Supabase client & API services
+├── styles/ # Tailwind setup
+├── assets/ # Images, logos
+└── utils/ # Constants and helpers
+
+
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
+
+
+git clone https://github.com/yourusername/flex-fusion.git
+cd flex-fusion
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+3. Configure Environment Variables
+Create a .env file in the root:
+
+
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_anon_key
+VITE_STRIPE_PUBLIC_KEY=your_stripe_test_key
+4. Start Development Server
 npm run dev
-```
+5. Deploy
+Push your repo to GitHub
 
-**Edit a file directly in GitHub**
+Connect to Vercel
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Add environment variables in Vercel dashboard
 
-**Use GitHub Codespaces**
+Done ✅
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🔒 Demo Credentials
+txt
+Copy
+Edit
+User: demo@flexfusion.com
+Pass: password123
+🤝 Contribution
+Pull requests and suggestions are welcome! Please open an issue first to discuss changes.
 
-## What technologies are used for this project?
+📄 License
+MIT License
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/888b6e05-9c2a-4416-a70f-de75755ea70e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+💡 Made with 💪 by MOHAMMAD TAUSIF

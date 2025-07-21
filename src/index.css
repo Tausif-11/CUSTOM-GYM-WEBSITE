@@ -8,35 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Fitness Brand Colors */
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Electric Orange */
+    --primary: 15 100% 55%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 15 100% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Electric Blue */
+    --secondary: 220 100% 55%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent: Neon Green */
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 2%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 15 100% 55%;
 
-    --radius: 0.5rem;
+    /* Fitness Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(15 100% 55%), hsl(220 100% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 2%) 0%, hsl(15 100% 15%) 50%, hsl(220 100% 15%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(15 100% 55%), hsl(120 100% 50%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(15 100% 55% / 0.3);
+    --shadow-card: 0 10px 30px hsl(0 0% 0% / 0.5);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
